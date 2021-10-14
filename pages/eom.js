@@ -6,13 +6,14 @@ export default function EOM({ employee }) {
   const myLoader = ({ src, width, quality }) => {
     return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
   };
+  console.log(employee.image);
   return (
     <>
       <div className="page-container">
         <Toolbar />
 
         <div className={styles.main}>
-          <h1>Employee Of The Month</h1>
+          <h1>I , Myself and me</h1>
 
           <div className={styles.info}>
             <h3>{employee.name}</h3>
@@ -34,7 +35,7 @@ export default function EOM({ employee }) {
 
 export async function getServerSideProps(context) {
   const data = await fetch(
-    "https://my-json-server.typicode.com/S-P-Ks/Next-News/employeeOfTheMonth"
+    "https://my-json-server.typicode.com/S-P-Ks/Next-News/info"
   );
 
   const employee = await data.json();

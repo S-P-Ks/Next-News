@@ -6,7 +6,6 @@ import router, { useRouter } from "next/router";
 export default function Feed({ d, pageNumber }) {
   const router = useRouter();
 
-  console.log(d.articles);
   return (
     <div className={styles.main}>
       <Toolbar />
@@ -27,8 +26,8 @@ export default function Feed({ d, pageNumber }) {
           onClick={() => {
             if (pageNumber > 1) {
               router
-                .push(`feed/${pageNumber - 1}`)
-                .then(() => window.screenTop());
+                .push(`/feed/${pageNumber - 1}`)
+                .then(() => window.screenTop);
             }
           }}
           className={pageNumber == 1 ? styles.disabled : styles.active}
@@ -68,8 +67,6 @@ export async function getServerSideProps(context) {
   );
 
   const d = await Data.json();
-
-  console.log(d.articles);
 
   return {
     props: {
