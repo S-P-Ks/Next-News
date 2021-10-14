@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.newCard {
+  padding: 20px;
+  margin: 20px;
+}
+
+.pagination {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.paginator {
+}
